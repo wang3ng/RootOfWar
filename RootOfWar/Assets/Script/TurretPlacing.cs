@@ -18,10 +18,11 @@ public class TurretPlacing : MonoBehaviour
     }
     private void placeTurret()
     {
-        GameObject turret = gameController.placeTurret();
-        if (turret != null)
+        turretInplace = gameController.placeTurret();
+        if (turretInplace != null)
         {
-            turretInplace = Instantiate(turret, transform.position, Quaternion.identity);
+            //turretInplace = Instantiate(turret, transform.position, Quaternion.identity);
+            turretInplace.SetActive(true);
             gameController.useInventory();
             GetComponent<Button>().onClick.RemoveAllListeners();
             GetComponent<Button>().onClick.AddListener(rootTurret);
@@ -36,8 +37,9 @@ public class TurretPlacing : MonoBehaviour
                 as GameObject, GameObject.Find("Inventory").transform);
             if (invT != null)
             {
+                Debug.Log(invT.GetComponent<TurretBehavior>());
                 invT.GetComponent<InventuryTurret>().Turret.GetComponent<TurretBehavior>().TurretInfo
-                    =Instantiate(turretInplace.GetComponent<TurretBehavior>().TurretInfo);
+                    =turretInplace.GetComponent<TurretBehavior>().TurretInfo;
             }
         }
     }
