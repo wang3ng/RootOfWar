@@ -10,14 +10,29 @@ public class Bullet5 : MonoBehaviour
     public float damage;
     public float range;
     public LayerMask EnemyMask;
+    private Vector2 actualPosition;
+    private float IniDistance;
+    private Vector2 TargetPosition;
+    private void Start()
+    {
+        TargetPosition = Target.position;
+        IniDistance = Vector2.Distance(TargetPosition, transform.position);
+        actualPosition = transform.position;
+    }
     void Update()
     {
-        if (Vector2.Distance(Target.position, transform.position) < 0.1)
+        if (Vector2.Distance(TargetPosition, transform.position) < 0.1) 
         {
             Explosion();
             Destroy(gameObject);
         }
-        else transform.position = Vector2.MoveTowards(transform.position, Target.position, speed * Time.deltaTime);
+        else
+        {
+            transform.position = actualPosition +
+                new Vector2(0, (IniDistance * IniDistance / 4 - Mathf.Pow((Vector2.Distance(TargetPosition, actualPosition) - IniDistance / 2), 2))/3);
+            actualPosition = Vector2.MoveTowards(actualPosition, TargetPosition, speed * Time.deltaTime);
+            
+        }
     }
     public void setTarget(Transform T)
     {

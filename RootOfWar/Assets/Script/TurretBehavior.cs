@@ -67,7 +67,6 @@ public class TurretBehavior : MonoBehaviour
     {
         if (attackCoolDown <= 0)
         {
-            Debug.Log(TurretInfo);
             TurretInfo.Behavior.attackTarget(this);
             attackCoolDown = TurretInfo.attackTime;
         }
