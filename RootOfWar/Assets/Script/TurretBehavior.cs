@@ -2,17 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/**
+ * This class control the behavior of a turret in the game scene.
+ **/
 public class TurretBehavior : MonoBehaviour
 {
     public TurretInfo TurretInfo;
+    // Time the attack cool down
     private float attackCoolDown=0;
+    // Record the target
     public Transform Target;
+    // The state of the turret, which can be "hunting" and "attacking", each remark searching enemy and shooting enenmy
     public string State;
     private void Start()
     {
+        // Make a copy of the turretinfo to avoid changing the information in the object.
         TurretInfo = Instantiate(TurretInfo);
+
+        // This section would assign the correct behavior for the turret
         if (TurretInfo.number == 2) TurretInfo.Behavior = new Turret2();
+
+
+        // Change the number that represents the turret.
         transform.Find("Canvas").Find("Number").GetComponent<Text>().text = Mathf.Pow(TurretInfo.number, TurretInfo.power).ToString();
     }
     // Update is called once per frame
@@ -27,6 +38,9 @@ public class TurretBehavior : MonoBehaviour
             attackingTarget();
         }
     }
+    /**
+     * This function would search for the enemy within radius.
+     **/
     private void searchingTarget()
     {
         Collider2D[] inRangeEnemies = Physics2D.OverlapCircleAll(transform.position, TurretInfo.range, TurretInfo.enemyMask);
@@ -36,6 +50,9 @@ public class TurretBehavior : MonoBehaviour
             State = "attacking";
         }
     }
+    /**
+     * This function would do the attack assigned to the turret in the attack speed given.
+     **/
     private void attackingTarget()
     {
         if (Vector2.Distance(transform.position, Target.position) <= TurretInfo.range)
@@ -44,6 +61,19 @@ public class TurretBehavior : MonoBehaviour
         }
         else State = "hunting";
     }
+    private void doAttack()
+    {
+        if (attackCoolDown <= 0)
+        {
+            TurretInfo.Behavior.attackTarget(this);
+            attackCoolDown = TurretInfo.attackTime;
+        }
+        attackCoolDown -= Time.deltaTime;
+    }
+    /**
+     * Input: the root power.
+     * The function would reduce the turret's number rooting with r.
+     **/
     public void reducePower(int r)
     {
         if(TurretInfo.power%r == 0)
@@ -52,15 +82,9 @@ public class TurretBehavior : MonoBehaviour
             transform.Find("Canvas").Find("Number").GetComponent<Text>().text = Mathf.Pow(TurretInfo.number,TurretInfo.power).ToString();
         }
     }
-    private void doAttack()
-    {
-        if(attackCoolDown <= 0)
-        {
-            TurretInfo.Behavior.attackTarget(this);
-            attackCoolDown = TurretInfo.attackTime;
-        }
-        attackCoolDown -= Time.deltaTime;
-    }
+    /**
+     * For editing purpose
+     **/
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, TurretInfo.range);

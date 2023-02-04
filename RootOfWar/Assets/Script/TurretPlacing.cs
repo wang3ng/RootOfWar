@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/**
+ * This class is for the turret holders on the map. 
+ * Either allow players to put turret on them or 
+ * shoot the turret in placeholder with the root gun.
+ **/
 public class TurretPlacing : MonoBehaviour
 {
     public gameControl gameController;
@@ -33,7 +37,7 @@ public class TurretPlacing : MonoBehaviour
             if (invT != null)
             {
                 invT.GetComponent<InventuryTurret>().Turret.GetComponent<TurretBehavior>().TurretInfo
-                    = turretInplace.GetComponent<TurretBehavior>().TurretInfo;
+                    =Instantiate(turretInplace.GetComponent<TurretBehavior>().TurretInfo);
             }
         }
     }

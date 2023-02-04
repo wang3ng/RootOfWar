@@ -1989,6 +1989,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3830973283837353058, guid: be56b5639269b0b41b0612de924b5acb, type: 3}
+      propertyPath: TurretInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 28f061119c041894f98b6c1519d5c872, type: 2}
+    - target: {fileID: 3830973283837353058, guid: be56b5639269b0b41b0612de924b5acb, type: 3}
       propertyPath: attackTime
       value: 0.5
       objectReference: {fileID: 0}

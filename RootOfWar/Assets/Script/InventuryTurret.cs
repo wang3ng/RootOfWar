@@ -21,7 +21,7 @@ public class InventuryTurret : MonoBehaviour
         if (gameController.getState() == "root")
         {
             // Check for the power of the turret to see if avaliable to root
-            TurretBehavior tb = Turret.GetComponent<TurretBehavior>();
+            TurretBehavior tb = Instantiate(Turret.GetComponent<TurretBehavior>());
             tb.TurretInfo = Instantiate(tb.TurretInfo);
             if (tb.TurretInfo.power % gameController.root == 0)
             {
