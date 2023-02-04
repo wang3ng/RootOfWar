@@ -5,13 +5,17 @@ using UnityEngine;
 public class EnemyBehavior : MonoBehaviour
 {
     public Transform[] waypoints;
+    public int lane;
     private int position;
     public float speed=10;
     public float health=100;
     // Start is called before the first frame update
     void Start()
     {
-        position = 0;
+        position = 1;
+        string waypoint = "Waypoints" + lane.ToString();
+        GameObject p = GameObject.Find(waypoint);
+        waypoints = p.GetComponentsInChildren<Transform>();
     }
 
     // Update is called once per frame

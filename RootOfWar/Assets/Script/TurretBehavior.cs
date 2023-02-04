@@ -22,13 +22,6 @@ public class TurretBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(State == "preparing")
-        {
-        }
-        if(State == "selected")
-        {
-
-        }
         if(State == "hunting")
         {
             searchingTarget();
@@ -45,7 +38,6 @@ public class TurretBehavior : MonoBehaviour
         {
             Target = inRangeEnemies[0].transform;
             State = "attacking";
-            Debug.Log(Target);
         }
     }
     private void attackingTarget()

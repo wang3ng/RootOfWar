@@ -33,17 +33,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum Events {
-    checkTimeRemain,
-    useCard,
-    checkCard,
-    move,
-    attack,
-    timeStart,
-    equip,
-    drawCard,
-    turn,
-    up,
-    win,
+    pickTurret,
+    pickGun
     /**
     itemget,
     Dialogue,
