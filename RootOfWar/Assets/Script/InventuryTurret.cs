@@ -20,9 +20,9 @@ public class InventuryTurret : MonoBehaviour
         // If the player selected the root gun, Root the tower
         if (gameController.getState() == "root")
         {
-            Debug.Log("a");
             // Check for the power of the turret to see if avaliable to root
             TurretBehavior tb = Turret.GetComponent<TurretBehavior>();
+            tb.TurretInfo = Instantiate(tb.TurretInfo);
             if (tb.TurretInfo.power % gameController.root == 0)
             {
                 // if rootable, root and copy object

@@ -11,6 +11,7 @@ public class TurretBehavior : MonoBehaviour
     public string State;
     private void Start()
     {
+        TurretInfo = Instantiate(TurretInfo);
         if (TurretInfo.number == 2) TurretInfo.Behavior = new Turret2();
         transform.Find("Canvas").Find("Number").GetComponent<Text>().text = Mathf.Pow(TurretInfo.number, TurretInfo.power).ToString();
     }
@@ -45,10 +46,8 @@ public class TurretBehavior : MonoBehaviour
     }
     public void reducePower(int r)
     {
-        Debug.Log(1);
         if(TurretInfo.power%r == 0)
         {
-            Debug.Log(2);
             TurretInfo.power /= r;
             transform.Find("Canvas").Find("Number").GetComponent<Text>().text = Mathf.Pow(TurretInfo.number,TurretInfo.power).ToString();
         }
