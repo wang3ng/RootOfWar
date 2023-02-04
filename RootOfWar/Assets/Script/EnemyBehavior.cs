@@ -42,6 +42,7 @@ public class EnemyBehavior : MonoBehaviour
     public void getDamage(float damage)
     {
         health -= damage;
+        //Hurt animation
         if(health < 0)
         {
             //Death Animation
