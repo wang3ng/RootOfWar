@@ -123,14 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd4fde9672f3cc4e84f994ba78a9f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 2
-  power: 2
-  damage: 2
-  range: 2.66
-  attackTime: 2
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 64
+  TurretInfo: {fileID: 11400000, guid: 28f061119c041894f98b6c1519d5c872, type: 2}
   Target: {fileID: 0}
   State: hunting
 --- !u!212 &3830973283837353084

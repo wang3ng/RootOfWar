@@ -5,20 +5,14 @@ using UnityEngine.UI;
 
 public class TurretBehavior : MonoBehaviour
 {
-    public AttackStyle Behavior;
-    public int number;
-    public int power;
-    public float damage;
-    public float range;
-    public float attackTime;
+    public TurretInfo TurretInfo;
     private float attackCoolDown=0;
-    public LayerMask enemyMask;
     public Transform Target;
     public string State;
     private void Start()
     {
-        if (number == 2) Behavior = new Turret2();
-        transform.Find("Canvas").Find("Number").GetComponent<Text>().text = Mathf.Pow(number, power).ToString();
+        if (TurretInfo.number == 2) TurretInfo.Behavior = new Turret2();
+        transform.Find("Canvas").Find("Number").GetComponent<Text>().text = Mathf.Pow(TurretInfo.number, TurretInfo.power).ToString();
     }
     // Update is called once per frame
     void Update()
@@ -34,7 +28,7 @@ public class TurretBehavior : MonoBehaviour
     }
     private void searchingTarget()
     {
-        Collider2D[] inRangeEnemies = Physics2D.OverlapCircleAll(transform.position, range, enemyMask);
+        Collider2D[] inRangeEnemies = Physics2D.OverlapCircleAll(transform.position, TurretInfo.range, TurretInfo.enemyMask);
         if(inRangeEnemies.Length > 0)
         {
             Target = inRangeEnemies[0].transform;
@@ -43,7 +37,7 @@ public class TurretBehavior : MonoBehaviour
     }
     private void attackingTarget()
     {
-        if (Vector2.Distance(transform.position, Target.position) <= range)
+        if (Vector2.Distance(transform.position, Target.position) <= TurretInfo.range)
         {
             doAttack();
         }
@@ -51,20 +45,23 @@ public class TurretBehavior : MonoBehaviour
     }
     public void reducePower(int r)
     {
-        power/=r;
-        transform.Find("Canvas").Find("Number").GetComponent<Text>().text = Mathf.Pow(number,power).ToString();
+        if(TurretInfo.power%r == 0)
+        {
+            TurretInfo.power /= r;
+            transform.Find("Canvas").Find("Number").GetComponent<Text>().text = Mathf.Pow(TurretInfo.number,TurretInfo.power).ToString();
+        }
     }
     private void doAttack()
     {
         if(attackCoolDown <= 0)
         {
-            Behavior.attackTarget(this);
-            attackCoolDown = attackTime;
+            TurretInfo.Behavior.attackTarget(this);
+            attackCoolDown = TurretInfo.attackTime;
         }
         attackCoolDown -= Time.deltaTime;
     }
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, TurretInfo.range);
     }
 }

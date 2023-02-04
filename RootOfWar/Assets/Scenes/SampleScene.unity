@@ -1988,6 +1988,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3830973283837353058, guid: be56b5639269b0b41b0612de924b5acb, type: 3}
+      propertyPath: attackTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830973283837353058, guid: be56b5639269b0b41b0612de924b5acb, type: 3}
+      propertyPath: enemyMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 3830973283837353059, guid: be56b5639269b0b41b0612de924b5acb, type: 3}
       propertyPath: m_RootOrder
       value: 7

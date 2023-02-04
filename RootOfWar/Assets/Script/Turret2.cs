@@ -8,7 +8,7 @@ public class Turret2 : AttackStyle
     {
         GameObject bullet = Resources.Load("Circle", typeof(GameObject)) as GameObject;
         bullet.GetComponent<Bullet>().setTarget(turret.Target);
-        bullet.GetComponent<Bullet>().setDamage(turret.damage);
+        bullet.GetComponent<Bullet>().setDamage(turret.TurretInfo.damage);
         Transform.Instantiate(bullet,turret.transform.position,turret.transform.rotation);
     }
 }

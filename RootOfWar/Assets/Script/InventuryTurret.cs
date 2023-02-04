@@ -10,26 +10,25 @@ public class InventuryTurret : MonoBehaviour
     public gameControl gameController;
     private void Start()
     {
-        transform.Find("Number").GetComponent<Text>().text = Mathf.Pow(Turret.GetComponent<TurretBehavior>().number, Turret.GetComponent<TurretBehavior>().power).ToString();
+        transform.Find("Number").GetComponent<Text>().text = Mathf.Pow(Turret.GetComponent<TurretBehavior>().TurretInfo.number, 
+            Turret.GetComponent<TurretBehavior>().TurretInfo.power).ToString();
         gameController = GameObject.Find("GameSatus").GetComponent<gameControl>();
         GetComponent<Button>().onClick.AddListener(clicking);
     }
     public void clicking()
     {
         // If the player selected the root gun, Root the tower
-        if (gameController.state == "root")
+        if (gameController.getState() == "root")
         {
             // Check for the power of the turret to see if avaliable to root
-            int p = Turret.GetComponent<TurretBehavior>().power;
-            if (p % gameController.root == 0)
+            TurretBehavior tb = Turret.GetComponent<TurretBehavior>();
+            if (tb.TurretInfo.power % gameController.root == 0)
             {
                 // if rootable, root and copy object
-                p /= gameController.root;
-                Debug.Log(p);
-                transform.Find("Number").GetComponent<Text>().text = Mathf.Pow(Turret.GetComponent<TurretBehavior>().number, p).ToString();
+                tb.TurretInfo.power /= gameController.root;
+                transform.Find("Number").GetComponent<Text>().text = Mathf.Pow(tb.TurretInfo.number, tb.TurretInfo.power).ToString();
                 GameObject newInv = Instantiate(gameObject,transform.parent);
             }
-            gameController.state = "";
         }
         else
         {
