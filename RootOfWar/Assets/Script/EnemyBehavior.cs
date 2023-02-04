@@ -16,6 +16,7 @@ public class EnemyBehavior : MonoBehaviour
         string waypoint = "Waypoints" + lane.ToString();
         GameObject p = GameObject.Find(waypoint);
         waypoints = p.GetComponentsInChildren<Transform>();
+        transform.right = waypoints[position].position - transform.position;
     }
 
     // Update is called once per frame
@@ -28,7 +29,14 @@ public class EnemyBehavior : MonoBehaviour
         if(waypoints.Length > 0 && position < waypoints.Length)
         {
             transform.position = Vector2.MoveTowards(transform.position, waypoints[position].position, speed * Time.deltaTime);
-            if (transform.position == waypoints[position].position) position += 1;
+            if (transform.position == waypoints[position].position && position+1<waypoints.Length)
+            {
+                position += 1;
+                //Vector3 dir = waypoints[position].position - transform.position;
+                //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                transform.right = waypoints[position].position - transform.position;
+            }
         }
     }
     public void getDamage(float damage)

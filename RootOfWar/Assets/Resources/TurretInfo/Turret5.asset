@@ -15,8 +15,8 @@ MonoBehaviour:
   number: 5
   power: 1
   damage: 1
-  range: 2
-  attackTime: 1
+  range: 4.97
+  attackTime: 3
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
