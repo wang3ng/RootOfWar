@@ -22,6 +22,7 @@ public class TurretBehavior : MonoBehaviour
         // This section would assign the correct behavior for the turret
         if (TurretInfo.number == 2) TurretInfo.Behavior = new Turret2();
         if (TurretInfo.number == 5) TurretInfo.Behavior = new Turret5();
+        if (TurretInfo.number == 3) TurretInfo.Behavior = new Turret3();
 
 
         // Change the number that represents the turret.
