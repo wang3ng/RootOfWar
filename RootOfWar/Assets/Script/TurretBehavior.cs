@@ -18,6 +18,7 @@ public class TurretBehavior : MonoBehaviour
     private void Start()
     {
         if (number == 2) Behavior = new Turret2();
+        transform.Find("Canvas").Find("Number").GetComponent<Text>().text = Mathf.Pow(number, power).ToString();
     }
     // Update is called once per frame
     void Update()
@@ -47,6 +48,11 @@ public class TurretBehavior : MonoBehaviour
             doAttack();
         }
         else State = "hunting";
+    }
+    public void reducePower(int r)
+    {
+        power/=r;
+        transform.Find("Canvas").Find("Number").GetComponent<Text>().text = Mathf.Pow(number,power).ToString();
     }
     private void doAttack()
     {

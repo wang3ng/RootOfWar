@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 2
-  power: 1
+  power: 2
   damage: 2
   range: 2.66
   attackTime: 2
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 6076835892368175734}
   - component: {fileID: 7496815922480117226}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

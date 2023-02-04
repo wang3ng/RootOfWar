@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class gameControl : MonoBehaviour
 {
+    // Player state
     public string state;
+    // The Turret holded if selected
     private InventuryTurret info;
+    // The root gun power if selected 
     public int root;
     void Start()
     {
