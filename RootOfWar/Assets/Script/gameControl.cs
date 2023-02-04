@@ -18,7 +18,7 @@ public class gameControl : MonoBehaviour
     {
         string cp = string.Copy(state);
         state = "";
-        return state;
+        return cp;
     }
     public void RootPrepare(int newRoot)
     {
