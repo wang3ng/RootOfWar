@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Turret3 : AttackStyle
 {
-    public override void attackTarget(TurretBehavior turret)
+    public override void AttackTarget(TurretBehavior turret)
     {
         turret.Target.GetComponent<EnemyBehavior>().getDamage(turret.TurretInfo.damage);
         LineRenderer line = turret.GetComponent<LineRenderer>();
-        line.enabled = true;
-        line.SetPosition(0, turret.transform.position);
-        line.SetPosition(1, turret.Target.transform.position);
+            LineDrawing(line, turret.transform.position, turret.Target.transform.position);
+    }
+
+    public void LineDrawing(LineRenderer L, Vector3 StartPos, Vector3 EndPos)
+    {
+        L.enabled = true;
+        L.SetPosition(0, StartPos);
+        L.SetPosition(1, EndPos);
     }
 }

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class AttackStyle
 {
-    public abstract void attackTarget(TurretBehavior turret);
+    public abstract void AttackTarget(TurretBehavior turret);
 }
