@@ -1970,7 +1970,7 @@ MonoBehaviour:
   - 4
   - 5
   EnemyOrder: 0000000000000000000000000000000000000000
-  waypoint: 0
+  waypoint: 1
 --- !u!4 &1476206447
 Transform:
   m_ObjectHideFlags: 0
