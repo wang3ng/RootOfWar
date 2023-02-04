@@ -27,6 +27,10 @@ public class Sponner : MonoBehaviour
         {
             if (clk >= Timer[current])
             {
+                if (EnemyOrder[current] >= enemies.Length)
+                {
+                    Debug.Log("No enemy of that type provided");
+                }
                 enemies[EnemyOrder[current]].GetComponent<EnemyBehavior>().lane = waypoint;
                 GameObject newEnemy = Instantiate(enemies[EnemyOrder[current]], transform.position, Quaternion.identity);
                 current += 1;
