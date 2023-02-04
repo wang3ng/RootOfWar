@@ -33,9 +33,9 @@ public class TurretPlacing : MonoBehaviour
         if(gameController.getState() == "root")
         {
             turretInplace.GetComponent<TurretBehavior>().reducePower(gameController.root);
-            /**TurretBehavior invT = Instantiate(Resources.Load("Object/Turret/TurretInventury", typeof(GameObject)) 
-                as GameObject, GameObject.Find("Inventory").transform);
-            if (invT != null)
+            Instantiate(Resources.Load("Object/Turret/TurretInventury", typeof(GameObject)) 
+                as GameObject, GameObject.Find("Inventory").transform).GetComponent<InventuryTurret>().Turret=Instantiate(turretInplace);
+            /**if (invT != null)
             {
                 Debug.Log(invT.GetComponent<TurretBehavior>());
                 invT.GetComponent<InventuryTurret>().Turret.GetComponent<TurretBehavior>().TurretInfo
