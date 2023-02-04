@@ -55,7 +55,7 @@ public class TurretBehavior : MonoBehaviour
      **/
     private void attackingTarget()
     {
-        if (Vector2.Distance(transform.position, Target.position) <= TurretInfo.range)
+        if (Target!=null && Vector2.Distance(transform.position, Target.position) <= TurretInfo.range)
         {
             doAttack();
         }
