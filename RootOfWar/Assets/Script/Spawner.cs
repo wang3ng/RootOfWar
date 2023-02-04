@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sponner : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     public GameObject[] enemies;
     public float[] Timer;
