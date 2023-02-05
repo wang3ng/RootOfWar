@@ -10,5 +10,6 @@ public class Turret5 : AttackStyle
         bullet.GetComponent<Bullet5>().setTarget(turret.Target);
         bullet.GetComponent<Bullet5>().setDamage(turret.Damage());
         Transform.Instantiate(bullet, turret.transform.position, turret.transform.rotation);
+        soundManager.Instance.sd5BombShoot.Play();
     }
 }

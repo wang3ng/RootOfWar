@@ -49,6 +49,7 @@ public class Bullet5 : MonoBehaviour
     {
         Instantiate(effect,transform.position,Quaternion.identity);
         Collider2D[] HitEnemies = Physics2D.OverlapCircleAll(transform.position, range, EnemyMask);
+        soundManager.Instance.sd5BombHit.Play();
         if (HitEnemies != null)
         {
             foreach(Collider2D enemy in HitEnemies)
