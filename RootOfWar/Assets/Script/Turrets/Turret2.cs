@@ -10,6 +10,6 @@ public class Turret2 : AttackStyle
         bullet.GetComponent<Bullet>().setTarget(turret.Target);
         bullet.GetComponent<Bullet>().setDamage(turret.Damage());
         Transform.Instantiate(bullet,turret.transform.position,Quaternion.identity);
-        soundManager.Instance.sd2Bullet.Play();
+        //soundManager.Instance.sd2Bullet.Play();
     }
 }

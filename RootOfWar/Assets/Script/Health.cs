@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
         }
         if (health <= 0)
         {
-            soundManager.Instance.sdFail.Play();
+            //soundManager.Instance.sdFail.Play();
             transform.Find("EndScene").gameObject.SetActive(true);
             
         }
