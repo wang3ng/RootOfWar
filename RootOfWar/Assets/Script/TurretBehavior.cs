@@ -88,6 +88,14 @@ public class TurretBehavior : MonoBehaviour
         }
     }
     /**
+     * 
+     **/
+    public float Damage()
+    {
+        float damage = 70 / (1 + 5 * (Mathf.Exp(0.8f - TurretInfo.power)));
+        return damage;
+    }
+    /**
      * For editing purpose
      **/
     private void OnDrawGizmosSelected()

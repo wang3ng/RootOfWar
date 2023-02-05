@@ -56,11 +56,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  lane: 0
+  lane: 1
   speed: 2
-  health: 10
-  freeze_efficient: 0.85
-  slow_speed: 0
+  health: 60
 --- !u!58 &2063472275562851578
 CircleCollider2D:
   m_ObjectHideFlags: 0

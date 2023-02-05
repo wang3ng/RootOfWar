@@ -14,7 +14,6 @@ public class TurretInfo : ScriptableObject
     public AttackStyle Behavior;
     public int number;
     public int power;
-    public float damage;
     public float range;
     public float attackTime;
     public LayerMask enemyMask;

@@ -26,7 +26,6 @@ public class EnemyBehavior : MonoBehaviour
         slow_speed = speed * freeze_efficient;
         Debug.Log(freeze_efficient);
     }
-
     // Update is called once per frame
     void Update()
     {
