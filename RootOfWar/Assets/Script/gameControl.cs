@@ -36,7 +36,7 @@ public class gameControl : MonoBehaviour
     }
     public GameObject placeTurret()
     {
-        if(getState()=="turret" && info == null) return null;
-        else return info.Turret;
+        if(getState()=="turret" && info != null) return info.Turret;
+        else return null;
     }
 }
