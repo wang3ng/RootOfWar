@@ -6,7 +6,7 @@ public class Turret3 : AttackStyle
 {
     public override void attackTarget(TurretBehavior turret)
     {
-        turret.Target.GetComponent<EnemyBehavior>().getDamage(turret.TurretInfo.damage);
+        turret.Target.GetComponent<EnemyBehavior>().getDamage(turret.Damage());
         LineRenderer line = turret.GetComponent<LineRenderer>();
         line.enabled = true;
         line.SetPosition(0, turret.transform.position);

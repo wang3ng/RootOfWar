@@ -18,7 +18,6 @@ public class EnemyBehavior : MonoBehaviour
         waypoints = p.GetComponentsInChildren<Transform>();
         transform.right = waypoints[position].position - transform.position;
     }
-
     // Update is called once per frame
     void Update()
     {
