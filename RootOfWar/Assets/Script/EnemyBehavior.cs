@@ -9,7 +9,13 @@ public class EnemyBehavior : MonoBehaviour
     private int position;
     public float speed=10;
     public float health=100;
+    public float freeze_efficient = 0f;
+    public float slow_speed;
     // Start is called before the first frame update
+    public void slow(float amount)
+    {
+        slow_speed = amount;
+    }
     void Start()
     {
         position = 1;
@@ -17,6 +23,8 @@ public class EnemyBehavior : MonoBehaviour
         GameObject p = GameObject.Find(waypoint);
         waypoints = p.GetComponentsInChildren<Transform>();
         transform.right = waypoints[position].position - transform.position;
+        slow_speed = speed * freeze_efficient;
+        Debug.Log(freeze_efficient);
     }
 
     // Update is called once per frame
