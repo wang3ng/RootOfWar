@@ -34,7 +34,8 @@ using UnityEngine.SceneManagement;
 
 public enum Events {
     Damage,
-    pickGun
+    SponerEnd,
+    Levelcomplete
     /**
     itemget,
     Dialogue,

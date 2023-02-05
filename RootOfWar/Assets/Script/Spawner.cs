@@ -32,7 +32,8 @@ public class Spawner : MonoBehaviour
                     Debug.Log("No enemy of that type provided");
                 }
                 enemies[EnemyOrder[current]].GetComponent<EnemyBehavior>().lane = waypoint;
-                GameObject newEnemy = Instantiate(enemies[EnemyOrder[current]], transform.position, Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemies[EnemyOrder[current]]);
+                newEnemy.transform.position = new Vector3(transform.position.x,transform.position.y,-1);
                 current += 1;
             }
             clk += Time.deltaTime;
@@ -44,6 +45,7 @@ public class Spawner : MonoBehaviour
         if (current >= total)
         {
             //Finish Generating
+            Messenger.Broadcast(Events.SponerEnd);
             Destroy(gameObject);
         }
     }
