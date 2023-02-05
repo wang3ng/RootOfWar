@@ -22,8 +22,11 @@ public class Health : MonoBehaviour
     {
         health--;
         string t = transform.Find("HealthBar").GetComponent<Text>().text;
-        t = t.Remove(t.Length - 1);
-        transform.Find("HealthBar").GetComponent<Text>().text = t;
+        if(t.Length > 0)
+        {
+            t = t.Remove(t.Length - 1);
+            transform.Find("HealthBar").GetComponent<Text>().text = t;
+        }
         if (health <= 0)
         {
             transform.Find("EndScene").gameObject.SetActive(true);
