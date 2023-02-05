@@ -10,8 +10,6 @@ public class soundManager : MonoBehaviour
     public AudioSource sd3Laser;
     public AudioSource sd5BombShoot;
     public AudioSource sd5BombHit;
-    public AudioSource sdWin;
-    public AudioSource sdFail;
 
 
 
