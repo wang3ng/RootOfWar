@@ -58,7 +58,7 @@ MonoBehaviour:
   - {fileID: 0}
   lane: 1
   speed: 2
-  health: 60
+  health: 100000
 --- !u!58 &2063472275562851578
 CircleCollider2D:
   m_ObjectHideFlags: 0

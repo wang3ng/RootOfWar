@@ -9,7 +9,10 @@ public class Bullet : MonoBehaviour
     public float damage;
     void Update()
     {
-        if (Target!=null && Vector2.Distance(Target.position, transform.position) < 0.1)
+        if(Target == null){
+            Destroy(gameObject); return; 
+        }
+        if (Vector2.Distance(Target.position, transform.position) < 0.1)
         {
             Target.GetComponent<EnemyBehavior>().getDamage(damage);
             Destroy(gameObject);
