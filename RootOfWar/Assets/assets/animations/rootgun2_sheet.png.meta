@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 00a125e436b64405d837c13535cdefe4
+guid: 4a08311b136344ecfa9eba8eba81fda9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: rootgun2_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 46
+        width: 924
+        height: 568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ec5b4bb0ef246bfa9ab64ab95bd77b
+      internalID: 1877510513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rootgun2_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 43
+        width: 924
+        height: 579
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcbcba65bd3ca413ca7ec63c75daa451
+      internalID: -870854381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rootgun2_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2330
+        y: 43
+        width: 923
+        height: 584
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa1048ce2e6545388a9a58bd8601ed0
+      internalID: 1088551314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +177,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rootgun2_sheet_2: 1088551314
+      rootgun2_sheet_0: 1877510513
+      rootgun2_sheet_1: -870854381
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
