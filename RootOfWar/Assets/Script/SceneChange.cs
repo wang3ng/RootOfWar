@@ -16,4 +16,8 @@ public class SceneChange : MonoBehaviour
         Debug.Log("a");
         ChangeScene(currentScene);
     }
+    public void backToMain()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
 }

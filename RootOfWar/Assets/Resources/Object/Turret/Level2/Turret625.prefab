@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 526b0b4ed825a495abd323cc06b3581a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab8e7bf56105e48469c108eda43629c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -234,7 +234,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 47f6389b830464ed1ab051d4cf62797b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cafec2580605b23469bae4b65c8d0755, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 3830973283837353059}
   - component: {fileID: 3830973283837353058}
   m_Layer: 0
-  m_Name: Turret16
+  m_Name: Turret625
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd4fde9672f3cc4e84f994ba78a9f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurretInfo: {fileID: 11400000, guid: f90164b398602634ba6beb05b526b0b6, type: 2}
+  TurretInfo: {fileID: 11400000, guid: 5a71f93594768a14789d5b55794414b2, type: 2}
   Target: {fileID: 0}
   State: hunting
   drawable: 0
