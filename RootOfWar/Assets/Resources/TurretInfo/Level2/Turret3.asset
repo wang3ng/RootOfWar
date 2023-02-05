@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71af5d3179330a64fa4c27d29ab09df8, type: 3}
-  m_Name: Turret16
+  m_Name: Turret3
   m_EditorClassIdentifier: 
-  number: 2
-  power: 4
-  range: 2.66
-  attackTime: 0.5
+  number: 3
+  power: 1
+  range: 2
+  attackTime: 0.01
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
