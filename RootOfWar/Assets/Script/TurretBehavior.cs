@@ -14,6 +14,8 @@ public class TurretBehavior : MonoBehaviour
     public Transform Target;
     // The state of the turret, which can be "hunting" and "attacking", each remark searching enemy and shooting enenmy
     public string State;
+
+    public bool drawable = false;
     private void Start()
     {
         // Make a copy of the turretinfo to avoid changing the information in the object.
@@ -46,11 +48,12 @@ public class TurretBehavior : MonoBehaviour
     private void searchingTarget()
     {
         Collider2D[] inRangeEnemies = Physics2D.OverlapCircleAll(transform.position, TurretInfo.range, TurretInfo.enemyMask);
-        if(inRangeEnemies.Length > 0)
+        if (inRangeEnemies.Length > 0)
         {
             Target = inRangeEnemies[0].transform;
             State = "attacking";
         }
+        else if (GetComponent<LineRenderer>()) GetComponent<LineRenderer>().enabled = false;
     }
     /**
      * This function would do the attack assigned to the turret in the attack speed given.
@@ -67,7 +70,7 @@ public class TurretBehavior : MonoBehaviour
     {
         if (attackCoolDown <= 0)
         {
-            TurretInfo.Behavior.attackTarget(this);
+            TurretInfo.Behavior.AttackTarget(this);
             attackCoolDown = TurretInfo.attackTime;
         }
         attackCoolDown -= Time.deltaTime;
@@ -83,6 +86,14 @@ public class TurretBehavior : MonoBehaviour
             TurretInfo.power /= r;
             transform.Find("Canvas").Find("Number").GetComponent<Text>().text = Mathf.Pow(TurretInfo.number,TurretInfo.power).ToString();
         }
+    }
+    /**
+     * 
+     **/
+    public float Damage()
+    {
+        float damage = 70 / (1 + 5 * (Mathf.Exp(0.8f - TurretInfo.power)));
+        return damage;
     }
     /**
      * For editing purpose
