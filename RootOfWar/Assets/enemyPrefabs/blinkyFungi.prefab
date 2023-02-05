@@ -57,7 +57,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   lane: 1
-  speed: 1.5
+  speed: 1
   health: 100
   effectClock: []
 --- !u!58 &2063472275562851578
