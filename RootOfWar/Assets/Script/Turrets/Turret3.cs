@@ -7,10 +7,11 @@ public class Turret3 : AttackStyle
     public float freeze_efficient = 0.9f;
     public override void AttackTarget(TurretBehavior turret)
     {
-        turret.Target.GetComponent<EnemyBehavior>().getDamage(turret.Damage()*0.14f);
+        float damage = turret.Damage() * 0.14f;
+        turret.Target.GetComponent<EnemyBehavior>().getDamage(damage);
         LineRenderer line = turret.GetComponent<LineRenderer>();
         LineDrawing(line, turret.transform.position, turret.Target.transform.position);
-        turret.Target.GetComponent<EnemyBehavior>().speed = turret.Target.GetComponent<EnemyBehavior>().slow_speed;
+        turret.Target.GetComponent<EnemyBehavior>().slow(turret.TurretInfo.power);
     }
 
     public void LineDrawing(LineRenderer L, Vector3 StartPos, Vector3 EndPos)

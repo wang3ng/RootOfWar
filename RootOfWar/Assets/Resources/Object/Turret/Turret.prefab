@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5903737166705841205}
   - component: {fileID: 7600120458724565794}
   - component: {fileID: 1220543333587919230}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,6 +126,7 @@ MonoBehaviour:
   TurretInfo: {fileID: 11400000, guid: b5f369b0fd5fe8649a154d92c8765d78, type: 2}
   Target: {fileID: 0}
   State: hunting
+  drawable: 0
 --- !u!212 &3830973283837353084
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -189,7 +190,7 @@ GameObject:
   - component: {fileID: 2648060388268013811}
   - component: {fileID: 6076835892368175734}
   - component: {fileID: 7496815922480117226}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}

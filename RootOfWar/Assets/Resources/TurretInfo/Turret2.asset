@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Turret2
   m_EditorClassIdentifier: 
   number: 2
-  power: 4
-  damage: 2
+  power: 1
   range: 2.66
   attackTime: 0.5
   enemyMask:

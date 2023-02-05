@@ -33,7 +33,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum Events {
-    pickTurret,
+    Damage,
     pickGun
     /**
     itemget,
