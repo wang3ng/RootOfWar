@@ -23,6 +23,7 @@ public class TurretPlacing : MonoBehaviour
         {
             //turretInplace = Instantiate(turret, transform.position, Quaternion.identity);
             turretInplace.SetActive(true);
+            turretInplace.transform.position = transform.position;
             gameController.useInventory();
             GetComponent<Button>().onClick.RemoveAllListeners();
             GetComponent<Button>().onClick.AddListener(rootTurret);

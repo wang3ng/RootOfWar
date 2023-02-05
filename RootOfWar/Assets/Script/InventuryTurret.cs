@@ -36,6 +36,7 @@ public class InventuryTurret : MonoBehaviour
         else
         {
             // Select the inventury turret
+            // Highlighting
             gameController.TurretPrepare(this);
         }
     }
