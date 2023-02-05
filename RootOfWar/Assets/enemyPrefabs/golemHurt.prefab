@@ -56,9 +56,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  lane: 1
+  lane: 2
   speed: 0.5
-  health: 600
+  health: 550
   effectClock: []
 --- !u!58 &2063472275562851578
 CircleCollider2D:
