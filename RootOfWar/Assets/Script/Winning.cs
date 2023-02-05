@@ -14,6 +14,7 @@ public class Winning : MonoBehaviour
     }
     private void winning()
     {
+        soundManager.Instance.sdWin.Play();
         transform.Find("WinScene").gameObject.SetActive(true);
     }
 }
