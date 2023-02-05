@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Winning : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        Messenger.AddListener(Events.Levelcomplete, winning);
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        Messenger.RemoveListener(Events.Levelcomplete, winning);
+    }
+    private void winning()
+    {
+        transform.Find("WinScene").gameObject.SetActive(true);
+        Messenger.RemoveListener(Events.Levelcomplete, winning);
     }
 }

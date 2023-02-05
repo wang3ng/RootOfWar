@@ -62,7 +62,17 @@ public class TurretBehavior : MonoBehaviour
     {
         if (Target!=null && Vector2.Distance(transform.position, Target.position) <= TurretInfo.range)
         {
-            transform.Find("Head").right = Target.position - transform.position;
+            if (Target.position.x <= transform.position.x)
+            {
+                transform.Find("Head").right = transform.position - Target.position;
+                transform.Find("Head").localScale = new Vector3(-1, 1, 1);
+            }
+            else
+            {
+                transform.Find("Head").right = -transform.position + Target.position;
+                transform.Find("Head").localScale = new Vector3(1, 1, 1);
+            }
+            
             doAttack();
         }
         else State = "hunting";
