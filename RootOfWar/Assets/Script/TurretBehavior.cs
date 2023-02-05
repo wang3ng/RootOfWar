@@ -81,8 +81,8 @@ public class TurretBehavior : MonoBehaviour
     {
         if (attackCoolDown <= 0)
         {
-            TurretInfo.Behavior.AttackTarget(this);
             attackCoolDown = TurretInfo.attackTime;
+            TurretInfo.Behavior.AttackTarget(this);            
         }
         attackCoolDown -= Time.deltaTime;
     }

@@ -51,7 +51,16 @@ public class EnemyBehavior : MonoBehaviour
                 //Vector3 dir = waypoints[position].position - transform.position;
                 //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
                 //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                transform.right = waypoints[position].position - transform.position;
+                if (waypoints[position].position.x <= transform.position.x)
+                {
+                    transform.Find("Head").right = transform.position - waypoints[position].position;
+                    transform.Find("Head").localScale = new Vector3(-1, 1, 1);
+                }
+                else
+                {
+                    transform.Find("Head").right = -transform.position + waypoints[position].position;
+                    transform.Find("Head").localScale = new Vector3(1, 1, 1);
+                }
             }
         }
         if(transform.position == waypoints[position].position && position + 1 >= waypoints.Length){
