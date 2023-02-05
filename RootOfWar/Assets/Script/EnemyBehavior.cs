@@ -54,8 +54,7 @@ public class EnemyBehavior : MonoBehaviour
                 transform.right = waypoints[position].position - transform.position;
             }
         }
-        if(position+1 >= waypoints.Length){
-            Debug.Log('a');
+        if(transform.position == waypoints[position].position && position + 1 >= waypoints.Length){
             Messenger.Broadcast(Events.Damage);
             Destroy(gameObject);
         }
