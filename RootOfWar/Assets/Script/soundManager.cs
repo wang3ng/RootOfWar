@@ -13,14 +13,13 @@ public class soundManager : MonoBehaviour
     public AudioSource sdWin;
     public AudioSource sdFail;
 
-
-
     void Awake()
     {
 
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
