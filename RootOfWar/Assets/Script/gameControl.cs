@@ -31,7 +31,7 @@ public class gameControl : MonoBehaviour
     {
         if (totalSpawner <= 0)
         {
-            if(FindObjectOfType<EnemyBehavior>() != null)
+            if(FindObjectOfType<EnemyBehavior>() == null)
             {
                 Messenger.Broadcast(Events.Levelcomplete);
             }
