@@ -9,7 +9,7 @@ public class soundManager : MonoBehaviour
     public AudioSource sd2Bullet;
     public AudioSource sd3Laser;
     public AudioSource sd5BombShoot;
-    public AudioSource sdBombHit;
+    public AudioSource sd5BombHit;
 
 
 

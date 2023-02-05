@@ -12,6 +12,7 @@ public class Turret3 : AttackStyle
         LineRenderer line = turret.GetComponent<LineRenderer>();
         LineDrawing(line, turret.transform.position, turret.Target.transform.position);
         turret.Target.GetComponent<EnemyBehavior>().slow(turret.TurretInfo.power);
+        soundManager.Instance.sd3Laser.Play();
     }
 
     public void LineDrawing(LineRenderer L, Vector3 StartPos, Vector3 EndPos)
