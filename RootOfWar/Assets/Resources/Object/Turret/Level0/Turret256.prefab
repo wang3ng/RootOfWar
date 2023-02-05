@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 3830973283837353059}
   - component: {fileID: 3830973283837353058}
   m_Layer: 0
-  m_Name: Turret16
+  m_Name: Turret256
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd4fde9672f3cc4e84f994ba78a9f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurretInfo: {fileID: 11400000, guid: b5f369b0fd5fe8649a154d92c8765d78, type: 2}
+  TurretInfo: {fileID: 11400000, guid: fa60c6e0a125e284d85a6d7428d9c2cd, type: 2}
   Target: {fileID: 0}
   State: hunting
   drawable: 0

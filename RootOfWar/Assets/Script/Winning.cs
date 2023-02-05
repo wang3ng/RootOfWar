@@ -15,6 +15,5 @@ public class Winning : MonoBehaviour
     private void winning()
     {
         transform.Find("WinScene").gameObject.SetActive(true);
-        Messenger.RemoveListener(Events.Levelcomplete, winning);
     }
 }
