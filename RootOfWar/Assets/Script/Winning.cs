@@ -13,8 +13,10 @@ public class Winning : MonoBehaviour
         Messenger.RemoveListener(Events.Levelcomplete, winning);
     }
     private void winning()
-    {
-        //soundManager.Instance.sdWin.Play();
-        transform.Find("WinScene").gameObject.SetActive(true);
+    {        
+        if (GetComponent<Health>().health != 0)
+        {
+            transform.Find("WinScene").gameObject.SetActive(true);
+        }
     }
 }
