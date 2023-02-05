@@ -10,6 +10,8 @@ public class EnemyBehavior : MonoBehaviour
     public float speed=10;
     public float health=100;
     private float currentSpeed;
+    public GameObject deathParticle;
+    public GameObject hitParticle;
     // Start is called before the first frame update
     public void slow(float amount)
     {
@@ -79,10 +81,13 @@ public class EnemyBehavior : MonoBehaviour
     public void getDamage(float damage)
     {
         health -= damage;
+        Instantiate(hitParticle, this.gameObject.transform.position, transform.rotation);
         //Hurt animation
-        if(health < 0)
+        if (health < 0)
         {
             //Death Animation
+            GameObject g = Instantiate(deathParticle, this.gameObject.transform.position, transform.rotation);
+            g.transform.position = new Vector3(transform.position.x, transform.position.y, 100);
             Destroy(gameObject);
         }
     }

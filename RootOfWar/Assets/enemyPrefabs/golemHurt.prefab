@@ -59,6 +59,8 @@ MonoBehaviour:
   lane: 2
   speed: 0.5
   health: 550
+  deathParticle: {fileID: 7814592370180846523, guid: e9513e9b858fc471bb5ea265df13f3f4, type: 3}
+  hitParticle: {fileID: 2063472275562851462}
   effectClock: []
 --- !u!58 &2063472275562851578
 CircleCollider2D:
