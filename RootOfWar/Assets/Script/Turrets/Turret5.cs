@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Turret5 : AttackStyle
 {
-    public override void attackTarget(TurretBehavior turret)
+    public override void AttackTarget(TurretBehavior turret)
     {
         GameObject bullet = Resources.Load("Bullet5", typeof(GameObject)) as GameObject;
         bullet.GetComponent<Bullet5>().setTarget(turret.Target);
