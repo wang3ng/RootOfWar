@@ -53,7 +53,9 @@ public class EnemyBehavior : MonoBehaviour
                 //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 transform.right = waypoints[position].position - transform.position;
             }
-        }else if(position < waypoints.Length){
+        }
+        if(position+1 >= waypoints.Length){
+            Debug.Log('a');
             Messenger.Broadcast(Events.Damage);
             Destroy(gameObject);
         }
