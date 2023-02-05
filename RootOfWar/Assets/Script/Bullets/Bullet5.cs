@@ -13,6 +13,8 @@ public class Bullet5 : MonoBehaviour
     private Vector2 actualPosition;
     private float IniDistance;
     private Vector2 TargetPosition;
+    public GameObject effect;
+
     private void Start()
     {
         TargetPosition = Target.position;
@@ -45,6 +47,7 @@ public class Bullet5 : MonoBehaviour
 
     public void Explosion()
     {
+        Instantiate(effect,transform.position,Quaternion.identity);
         Collider2D[] HitEnemies = Physics2D.OverlapCircleAll(transform.position, range, EnemyMask);
         if (HitEnemies != null)
         {
