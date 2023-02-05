@@ -25,6 +25,7 @@ public class gameControl : MonoBehaviour
     }
     void Start()
     {
+        Time.timeScale = 1;
         state = "";
     }
     private void Update()
