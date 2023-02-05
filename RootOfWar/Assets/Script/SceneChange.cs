@@ -13,6 +13,7 @@ public class SceneChange : MonoBehaviour
     }
     public void Reload()
     {
+        Debug.Log("a");
         ChangeScene(currentScene);
     }
 }
